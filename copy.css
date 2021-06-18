@@ -1,0 +1,250 @@
+/*     GERAL     */
+
+html {
+  font-family: "Nunito", sans-serif;
+  background-image: url(15769.png);
+  font-size: 62.5%;
+}
+header {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.5rem;
+  align-items: center;
+}
+html,
+body {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  overflow: hidden;
+}
+footer {
+  text-align: center;
+  display: block;
+  margin-top: 5rem;
+}
+
+/*     BUTTONS     */
+.buttonClose {
+  max-width: 25px;
+  max-height: 25px;
+  margin-left: auto;
+  color: black;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+a.button.new {
+  text-decoration: none;
+  color: white;
+  font-size: 1.8rem;
+  margin: 2rem 5rem;
+}
+
+.input-group.actions,
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  padding: 6px;
+}
+button:hover {
+  font-weight: 600;
+}
+.button.cancel {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 2rem;
+}
+.button.cancel:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/*          BOARDS AND CARDS         */
+
+.form .boards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 2rem 5rem;
+  gap: 1rem;
+}
+
+.board {
+  border-radius: 4px;
+  border: 0.5px solid rgb(255, 255, 255);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.board h3 {
+  padding: 1.8rem;
+  margin: 0;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-align: center;
+}
+
+.dropzone {
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: rgb(193, 214, 231);
+  min-height: 40rem;
+  min-width: 40rem;
+  color: black;
+  border-radius: 2px;
+}
+
+.card,
+.dropzone {
+  transition: 300ms;
+}
+
+.card {
+  background-color: rgb(221, 230, 240);
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
+  margin: 1rem;
+  display: flex;
+}
+.ohno {
+  padding: 1.3rem;
+}
+.card div {
+  max-width: 100%;
+}
+
+.is-dragging {
+  cursor: grab;
+  opacity: 0.3;
+}
+
+.over {
+  opacity: 0.8;
+  background-color: rgb(235, 243, 242);
+}
+
+/*---------MODAL--------------------------------------------*/
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal {
+  background-image: url(15769.png);
+  max-width: 500px;
+  width: 90%;
+  height: 400px;
+  padding: 5rem;
+  border-radius: 4px;
+}
+
+.modal-overlay .modal .grid {
+  display: flex;
+  max-width: 99%;
+  gap: 1rem;
+}
+
+h2 {
+  color: white;
+  font-size: 2.2rem;
+}
+.title,
+.description,
+.select,
+.date {
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 20px;
+
+  padding: 10px;
+}
+
+.date,
+.title,
+.description {
+  max-width: 99%;
+}
+.description {
+  height: 70px;
+}
+
+.firstPage {
+  display: flex;
+}
+
+@media (max-width: 1390px) {
+  html {
+    font-size: 0.5rem;
+  }
+  .dropzone {
+    min-height: 35rem;
+    min-width: 35rem;
+  }
+}
+
+@media (max-width: 990px) {
+  html {
+    font-size: 0.8rem;
+  }
+  .dropzone {
+    min-height: 30rem;
+    min-width: 30rem;
+  }
+}
+@media (max-width: 870px) {
+  html {
+    font-size: 0.5rem;
+  }
+  .dropzone {
+    min-height: 35rem;
+    min-width: 25rem;
+  }
+}
+@media (max-width: 760px) {
+  html {
+    font-size: 0.5rem;
+  }
+  .dropzone {
+    min-height: 35rem;
+    min-width: 30rem;
+    display: flex;
+    width: 80vw;
+  }
+  .board {
+    margin-left: -2rem;
+  }
+  .card {
+    justify-content: space-between;
+    padding: 5px;
+  }
+}

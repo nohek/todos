@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dvan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;600;800&display=swap" rel="stylesheet" />
+    <!-- <link rel="stylesheet" href="CalendarPicker.style.css" />
+    <script src="CalendarPicker.js"></script> -->
+    <script src="https://kit.fontawesome.com/8d85c4846a.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <h1>Dvan</h1>
+    </header>
+
+    <a href="#" onclick="Modal.open()" class="button new">+ Adicionar demanda</a>
+
+    <form id="form" class="form" onsubmit="newTask.submit(event)">
+      <div class="boards">
+        <div class="board">
+          <h3>Pendente</h3>
+          <div class="dropzone" id="pendente">
+            <!-- deveria ter os card -->
+          </div>
+        </div>
+
+        <div class="board">
+          <h3>Em andamento</h3>
+          <div class="dropzone" id="andamento">
+            <!-- deveria ter os card -->
+          </div>
+        </div>
+
+        <div class="board">
+          <h3>Feito</h3>
+          <div class="dropzone" id="feito">
+            <!-- deveria ter os card -->
+          </div>
+        </div>
+      </div>
+
+      <div class="board">
+        <h3>Contador de tarefas</h3>
+        <div class="dropzone" id="tarefas" >
+          <!-- contador de tarefas -->
+        </div>
+      </div>
+    </div>
+
+      <div class="modal-overlay">
+        <div class="modal">
+          <div class="form" id="form">
+            <h2>Nova demanda</h2>
+
+            <div class="grid">
+              <select name="select" class="select" id="responsible">
+                <option value="0" name="0"></option>
+                <option value="Guilherme">Guilherme</option>
+                <option value="Ronaldo">Ronaldo</option>
+                <option value="Francyelle">Francyelle</option>
+                <option value="Daniel">Daniel</option>
+                <option value="Rafael">Rafael</option>
+                <option value="Janaina">Janaina</option>
+                <option value="Daniela">Daniela</option>
+              </select>
+              <div class="input-group">
+                <label class="sr-only" for="date">Data</label>
+                <input type="date" class="date" id="date" name="setTodaysDate" />
+              </div>
+            </div>
+
+            <div class="input-group" class="line">
+              <label class="sr-only" for="task">Título</label>
+              <input type="text" id="title" class="title" placeholder="Título (obrigatório)" />
+            </div>
+
+            <label class="sr-only" for="task">Descrição</label>
+            <input type="text" id="description" class="description" placeholder="Descrição (opcional)" />
+
+            <div class="input-group actions">
+              <a onclick="Modal.close()" href="#" class="button cancel">Cancelar </a>
+              <button type="submit" class="button">Salvar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <script src="script.js" defer></script>
+    <footer>Dvan - 2021</footer>
+  </body>
+</html>

@@ -1,0 +1,388 @@
+/*     GERAL     */
+
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  background-image: url(15769.png);
+  background-repeat: inherit;
+  background-size: cover;
+
+  font-family: "Nunito", sans-serif;
+  font-size: 62.5%;
+}
+header {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1.7rem;
+  align-items: center;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  overflow: auto;
+}
+body {
+  scrollbar-arrow-color: #000000;
+  scrollbar-3dlight-color: #000000;
+  scrollbar-highlight-color: #ff0000;
+  scrollbar-face-color: #ffffff;
+  scrollbar-shadow-color: #0000ff;
+  scrollbar-darkshadow-color: #ffff00;
+  scrollbar-track-color: #00ff00;
+}
+footer {
+  position: fixed;
+  bottom: 0;
+  font-size: 1.5rem;
+  width: 100%;
+  text-align: center;
+}
+
+/*     BUTTONS     */
+.buttonClose {
+  max-width: 25px;
+  max-height: 25px;
+  margin-left: auto;
+  color: black;
+  background-color: transparent;
+  border-radius: 5px;
+  padding: 0.5rem;
+}
+a.button.new {
+  text-decoration: none;
+  color: white;
+  font-size: 2rem;
+  margin: 2rem 5rem;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+}
+
+.input-group.actions,
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 2rem;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+button {
+  cursor: pointer;
+  border: 1px solid white;
+  color: white;
+  padding: 6px;
+}
+button:hover {
+  font-weight: 600;
+}
+.button.cancel {
+  text-decoration: none;
+  color: white;
+  border: 1px solid white;
+  border-radius: 4px;
+  padding: 6px;
+  font-size: 2rem;
+}
+.button.cancel:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/*          BOARDS AND CARDS         */
+
+.form .boards {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  align-content: space-around;
+  margin: 1rem 5rem;
+  gap: 3rem;
+}
+
+.board {
+  box-sizing: border-box;
+  margin-top: 1rem;
+}
+
+.board h3 {
+  padding: 1.8rem;
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  text-align: center;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 5px 5px 0 0;
+}
+
+.dropzone,
+.contador {
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: rgb(193, 214, 231);
+  min-height: 60rem;
+  min-width: 30rem;
+  color: black;
+  border-radius: 0 0 5px 5px;
+  box-sizing: border-box;
+  border: 1px solid rgb(255, 255, 255);
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  overflow-y: auto;
+}
+.contador {
+  padding: 1rem;
+  font-size: 1.5rem;
+  background-color: rgb(193, 214, 231);
+  border-radius: 2px;
+}
+.card,
+.dropzone,
+.contador {
+  transition: 300ms;
+}
+
+.card {
+  color: rgb(5, 5, 5);
+  background-color: rgb(221, 230, 240);
+  border: 1px solid rgb(255, 255, 255);
+  border-radius: 5px;
+  padding: 0.3rem;
+  margin: 1rem;
+  display: flex;
+}
+.ohno {
+  padding: 1.3rem;
+}
+
+.is-dragging {
+  cursor: grab;
+  opacity: 0.3;
+}
+
+.over {
+  opacity: 0.8;
+  background-color: rgb(235, 243, 242);
+}
+
+li {
+  padding: 0.7rem;
+  list-style-type: circle;
+  font-weight: 500;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  color: rgb(5, 5, 5);
+  background-color: rgb(221, 230, 240);
+  border: 1px solid rgb(255, 255, 255);
+  margin-top: 1rem;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+/*---------MODAL--------------------------------------------*/
+.modal-overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
+  top: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  visibility: hidden;
+  z-index: 100;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+.modal {
+  background-image: url(15769.png);
+  background-size: contain;
+  max-width: 500px;
+  width: 90%;
+  height: 400px;
+  padding: 5rem;
+  border-radius: 4px;
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.modal-overlay .modal .grid {
+  margin-top: 2rem;
+  display: flex;
+  max-width: 99%;
+  gap: 1rem;
+}
+
+h2 {
+  color: white;
+  font-size: 2.2rem;
+}
+.title,
+.description,
+.select,
+.date {
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  margin-bottom: 20px;
+
+  padding: 10px;
+}
+
+.date,
+.title,
+.description {
+  max-width: 99%;
+}
+.description {
+  height: 80px;
+}
+
+.firstPage {
+  display: flex;
+}
+
+@media (max-width: 1380px) {
+  html {
+    font-size: 0.5rem;
+  }
+  .board,
+  .dropzone,
+  .contador {
+    max-height: 40rem;
+    max-width: 40rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 0.5rem;
+    margin: 0;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .h1 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form .boards {
+    grid-template-columns: 1fr 1fr;
+    justify-content: space-around;
+  }
+  .board {
+    margin-top: 6rem;
+    justify-self: center;
+  }
+  .board,
+  .dropzone,
+  .contador {
+    display: block;
+    min-height: 35rem;
+    min-width: 30rem;
+    max-height: 25rem;
+    max-width: 30rem;
+    box-sizing: border-box;
+    justify-content: space-around;
+  }
+  .card,
+  li {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 0.5rem;
+    margin: 0;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .h1 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form .boards {
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+  .board {
+    margin-top: 5rem;
+    justify-self: center;
+  }
+  .board,
+  .dropzone,
+  .contador {
+    display: block;
+    min-height: 35rem;
+    min-width: 40rem;
+    max-height: 25rem;
+    max-width: 30rem;
+    box-sizing: border-box;
+    justify-content: space-around;
+  }
+  .card,
+  li {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 425px) {
+  html {
+    font-size: 0.5rem;
+    margin: 0;
+  }
+  header {
+    display: flex;
+    justify-content: center;
+    align-self: center;
+  }
+  .h1 {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .form .boards {
+    grid-template-columns: 1fr;
+    justify-content: space-around;
+    margin-top: 1rem;
+  }
+  .board {
+    margin-top: 5rem;
+    justify-self: center;
+  }
+  .board,
+  .dropzone,
+  .contador {
+    display: block;
+    min-height: 30rem;
+    min-width: 35rem;
+    max-height: 25rem;
+    max-width: 30rem;
+    box-sizing: border-box;
+    justify-content: space-around;
+  }
+  .card,
+  li {
+    font-size: 1.6rem;
+  }
+}
